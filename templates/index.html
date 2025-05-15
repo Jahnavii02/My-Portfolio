@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JAHNAVI KOVURU</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      margin: 0;
+      padding: 0;
+      color: #e0f7fa;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      padding: 10px 0;
+      z-index: 10;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      color: #00ffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease-in-out, border-bottom 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #fff;
+      border-bottom: 2px solid #00ffff;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 60px auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .intro img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .intro h1 {
+      font-size: 36px;
+      text-transform: uppercase;
+      color: #00ffff;
+    }
+
+    .intro h3 {
+      font-weight: normal;
+      font-size: 20px;
+      color: #a7ffeb;
+    }
+
+    .intro p {
+      margin: 5px 0;
+      font-style: italic;
+      color: #80deea;
+    }
+
+    h2 {
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .section {
+      margin: 80px 40px;
+    }
+
+    .about {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #111;
+      border-left: 5px solid #00ffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      color: #e0f7fa;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .card.skills { background-color: #121212; }
+    .card.projects { background-color: #1f1f1f; }
+    .card.education { background-color: #121212; }
+
+    .contact p {
+      text-align: center;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+.resume-download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; 
+}
+
+.resume-download a {
+  font-size: 18px;  
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  margin: 0 auto;
+}
+
+.resume-download a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.resume-download a:hover {
+  color: #00ffff; 
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+  transform: scale(1.1);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ffff;
+  }
+  50% {
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+  }
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ffff;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  margin-bottom: 40px; 
+}
+
+h2 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.experience-section {
+  padding: 40px 20px;
+  background-color: #000;  
+}
+
+#interests {
+  padding: 80px 0;
+  color: #e0f7fa;
+  text-align: center;
+}
+
+#interests h2 {
+  font-size: 36px;
+  color: #00ffff;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+.card h3 {
+  color: #00ffff;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #b0bec5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .navbar ul li {
+    margin: 10px;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin: 30px auto;
+  }
+
+  .intro img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+
+  .intro h3 {
+    font-size: 18px;
+  }
+
+  .intro p {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .about {
+    padding: 15px;
+    margin: 0 10px;
+  }
+
+  .resume-download a {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <div class="intro">
+    <img src="static/images/me1_sows3q_Circle.jpg" alt="Jahnavi Kovuru">
+    <div>
+      <h1>JAHNAVI KOVURU</h1>
+      <h3>Hello! I'm Jahnavi Kovuru</h3>
+      <p>Learning. Building. Becoming.</p>
+      <p><strong>Student @ CMR Engineering College</strong></p>
+    </div>
+  </div>
+
+  <div class="section" id="about">
+    <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">About Me</h2>
+    <div class="about">
+      <p>
+        A Data Science undergraduate passionate about building impactful tech solutions for real-world challenges.
+        I specialize in developing web applications and data-driven systems, particularly those aligned with sustainability, women's safety, and automation.
+        With a strong interest in social development and governance, I aim to use technology as a catalyst for meaningful change.
+        I'm consistent, creative, and deeply committed to self-learning and purposeful innovation.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="skills">
+   <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Skills</h2>
+    <div class="card-container">
+      <div class="card skills">
+        <h4>Programming Languages</h4>
+        <p>Python (project-based), Java, C/C++</p>
+      </div>
+      <div class="card skills">
+        <h4>Web Development</h4>
+        <p>HTML, CSS, Flask</p>
+      </div>
+      <div class="card skills">
+        <h4>Data Management</h4>
+        <p>SQL, Pandas, NumPy</p>
+      </div>
+      <div class="card skills">
+        <h4>Data Visualization</h4>
+        <p>Matplotlib, Seaborn</p>
+      </div>
+      <div class="card skills">
+        <h4>Tools & APIs</h4>
+        <p>Git & GitHub, Google Maps API</p>
+      </div>
+      <div class="card skills">
+        <h4>Personal Skills</h4>
+        <p>Problem Solving, Communication, Teamwork</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="experience" class="experience-section">
+  <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Experience</h2>
+  <div style="max-width: 900px; margin: 30px auto; padding: 20px; background-color: #111; border-radius: 10px; color: #fff; box-shadow: 0 0 20px #00ffff;">
+    <h3 style="color: #00ffff;">Intern - MicroIT</h3>
+    <p><strong>Duration:</strong> May 2025 – June 2025</p>
+    <p><strong>Mode:</strong> Virtual</p>
+
+    <h4 style="margin-top: 20px; color: #00ffff;">Project 1: Portfolio Website</h4>
+    <ul>
+      <li>Frontend: HTML, CSS, JavaScript</li>
+      <li>Optional Styling Tools: Bootstrap or Tailwind CSS</li>
+      <li>Hosting: GitHub Pages or Vercel</li>
+      <li>Steps:
+        <ul>
+          <li>Code layout with HTML/CSS</li>
+          <li>Add interactivity using JavaScript</li>
+          <li>Deploy on GitHub Pages/Vercel</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4 style="margin-top: 20px; color: #00ffff;">Project 2: Sentiment Analysis (AI/ML)</h4>
+    <ul>
+      <li>Language: Python</li>
+      <li>Libraries: NLTK, TextBlob, scikit-learn, pandas, matplotlib</li>
+      <li>IDE: Jupyter Notebook / VS Code</li>
+      <li>Steps:
+        <ul>
+          <li>Collect data from CSV or web</li>
+          <li>Preprocess text: remove stop words, punctuation, lemmatization</li>
+          <li>Apply sentiment analysis using TextBlob or ML models</li>
+          <li>Display results with percentages</li>
+          <li>Visualize using matplotlib or seaborn</li>
+         
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <div class="section" id="projects">
+     <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Projects</h2>
+    <div class="card-container">
+      <div class="card projects">
+        <h3>Smart Waste Management System</h3>
+        <p>A full-stack application for recycling and donations with Google Maps integration.</p>
+        <p><strong>Tech Stack:</strong> Flask, HTML, CSS, PostgreSQL, Google Maps API</p>
+      </div>
+      <div class="card projects">
+        <h3>Empowering Women’s Safety</h3>
+        <p>Analyzes real-time data to predict potential threats using a Random Forest model.</p>
+        <p><strong>Tech Stack:</strong> Python, Pandas, Scikit-learn, HTML</p>
+      </div>
+      <div class="card projects">
+        <h3>Automated Attendance & Salary Calculator</h3>
+        <p>Uses Excel to track attendance and calculate salaries automatically.</p>
+        <p><strong>Tech Stack:</strong> Python, Excel, Pandas</p>
+      </div>
+      <div class="card projects">
+        <h3> Automated Fish Feeder using Arduino</h3>
+        <p>Uses Arduino and a servo motor to automate fish feeding at intervals.
+ Ensures precision and consistency in feeding schedules.</p>
+        <p><strong>Tech Stack:</strong> Arduino Uno, Servo Motor, RTC Module, programmed using C (Arduino IDE).</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section" id="education">
+     <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Education</h2>
+    <div class="card-container">
+      <div class="card education">
+        <h3>Bachelor’s in Technology</h3>
+        <p><strong>Expected Graduation:</strong> 2026</p>
+        <p><strong>Branch:</strong> Data Science</p>
+        <p><strong>CGPA:</strong> 9.17</p>
+        <p>CMR Engineering College, Hyderabad</p>
+      </div>
+      <div class="card education">
+        <h3>Intermediate (2020-2022)</h3>
+        <p><strong>Percentage:</strong> 93.5%</p>
+        <p>Siddhartha Junior College, Vikarabad, Telangana</p>
+      </div>
+    </div>
+  </div>
+
+<div class="resume-download">
+  <a href="static/resume (2).pdf" class="resume-download-link" download>
+    DOWNLOAD RESUME
+  </a>
+</div>
+
+<div class="section" id="interests">
+  <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Interests</h2>
+  <div class="card-container">
+    <div class="card">
+      <h4>Journaling</h4>
+      <p>Expressing thoughts and reflections regularly through writing.</p>
+    </div>
+    <div class="card">
+      <h4>Creative Writing</h4>
+      <p>Writing poems, stories, or essays that reflect imagination and originality.</p>
+    </div>
+    <div class="card">
+      <h4>Dance</h4>
+      <p>A form of expression and fitness I truly enjoy.</p>
+    </div>
+    <div class="card">
+      <h4>Arts & Crafts</h4>
+      <p>Exploring creativity through handmade designs and DIY projects.</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="section contact" id="contact">
+    <h2 style="text-align: center; color: #00ffff; margin-top: 50px;">Contact Me</h2>
+    <p><strong>Phone:</strong> +91 8639197410</p>
+    <p><strong>Email:</strong> jahnavikovuru12@gmail.com</p>
+    <p>
+      <a href="https://www.linkedin.com/in/jahnavi-kovuru" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/Jahnavii02" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </p>
+  </div>
+
+</body>
+</html>
